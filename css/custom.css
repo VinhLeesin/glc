@@ -1119,6 +1119,23 @@ header.main-header .header-sticky.active{
 	color: var(--accent-secondary-color);
 }
 
+.hero-experience-box-2 h2{
+    position: absolute;
+    top: 85%;
+    right: 0;
+    width: 100%;
+    max-width: 200px;
+    background-color: var(--accent-color);
+    box-shadow: 0px 0px 11.8px 0px #0000001F;
+    border-radius: 16px;
+    padding: 12px;
+    overflow: hidden;
+    font-family: "Arial", sans-serif;
+    font-size: 15px;
+	text-align: center;
+}
+
+
 /************************************/
 /***       05. About Us css	      ***/
 /************************************/
@@ -1137,7 +1154,10 @@ header.main-header .header-sticky.active{
 }
 
 .about-us-img-1,
-.about-us-img-2{
+.about-us-img-2,
+.about-us-img-3,
+.about-us-img-4,
+.about-us-img-5{
 	border-radius: 30px;
 }
 
@@ -1182,6 +1202,52 @@ header.main-header .header-sticky.active{
 }
 
 .about-us-img-2 img{
+	width: 100%;
+	aspect-ratio: 1 / 1.405;
+	object-fit: cover;
+	border-radius: 24px;
+}
+
+.about-us-img-3 figure{
+	display: block;
+	border-radius: 30px;
+}
+
+.about-us-img-3 img{
+	width: 100%;
+	aspect-ratio: 1 / 1.48;
+	object-fit: cover;
+	border-radius: 30px;
+}
+
+.about-us-img-4{
+	position: absolute;
+	top: 15px;
+    right: -10px;
+	width: 100%;
+	max-width: 250px;
+	border: 5px solid var(--white-color);
+}
+
+.about-us-img-4::before{
+	content: '';
+	position: absolute;
+	bottom: 10px;
+	right: 20px;
+	background: url('../images/about-us-arrow.svg') no-repeat;
+	background-position: center center;
+    background-size: contain;
+	height: 110px;
+    width: 83px;
+	transform: translateY(100%) rotate(-10.67deg);
+}
+
+.about-us-img-4 figure{
+	display: block;
+	border-radius: 24px;
+}
+
+.about-us-img-4 img{
 	width: 100%;
 	aspect-ratio: 1 / 1.405;
 	object-fit: cover;
@@ -1354,8 +1420,6 @@ header.main-header .header-sticky.active{
 
 .service-item .icon-box{
 	position: relative;
-	height: 80px;
-	width: 80px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1365,6 +1429,7 @@ header.main-header .header-sticky.active{
 
 .service-item .icon-box img{
 	width: 100%;
+	border-radius: 20px;
 }
 
 .service-item-content{
@@ -2572,19 +2637,22 @@ header.main-header .header-sticky.active{
     width: 1px;
 }
 
-.footer-logo,
-.about-footer-content{
-	margin-bottom: 30px;
+.footer-logo {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.footer-logo img{
-	width: 100%;
-	max-width: 151px;
+.footer-logo img {
+    max-width: 151px;
 }
 
-.about-footer-content p{
+.footer-logo h3 {
+	font-size: 20px;
 	color: var(--white-color);
-	margin-bottom: 0;
+	text-transform: capitalize;
+    margin: 0;
 }
 
 .footer-contact-list{
@@ -2595,9 +2663,7 @@ header.main-header .header-sticky.active{
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	display: flex;
-	gap: 20px 50px;
-	flex-wrap: wrap;
+	display: block;
 }
 
 .footer-contact-list ul li{
@@ -2609,6 +2675,11 @@ header.main-header .header-sticky.active{
 	padding: 9px 20px;
 	line-height: 1.1em;
 	transition: all 0.3s ease-in-out;
+	margin-bottom: 10px;
+}
+
+.footer-contact-list ul li:last-child {
+    margin-bottom: 0;
 }
 
 .footer-contact-list ul li:hover{
@@ -2840,7 +2911,6 @@ header.main-header .header-sticky.active{
 
 .page-header-box h1{
 	display: inline-block;
-	font-size: 74px;
     font-weight: 700;
 	color: var(--white-color);
 	margin-bottom: 10px;
@@ -2926,13 +2996,12 @@ header.main-header .header-sticky.active{
 	display: flex;
 	flex-wrap: wrap;
 	gap: 30px;
-	margin-left: -175px;
 	z-index: 2;
 }
 
 .mission-vision-item,
 .mission-vision-image{
-	width: calc(33.33% - 20px);
+	width: calc(50% - 20px);
 }
 
 .mission-vision-item{
