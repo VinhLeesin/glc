@@ -399,6 +399,7 @@ body{
 
 .section-row{
 	margin-bottom: 80px;
+
 }
 
 .section-row .section-title{
@@ -449,7 +450,6 @@ body{
 }
 
 .section-title h2{
-	font-size: 46px; 
     font-weight: 700;
 	margin-bottom: 0;
 	cursor: none;
@@ -830,7 +830,7 @@ header.main-header .header-sticky.active{
 
 .hero.hero-bg-image.hero-slider-layout .hero-slide{
 	position: relative;
-	background: url('../images/banner.jpg');
+	background: url('../images/hero-bg-1.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -838,14 +838,14 @@ header.main-header .header-sticky.active{
 }
 
 .hero.hero-bg-image.hero-slider-layout .hero-slide.slide-2{
-	background: url('../images/banner.jpg');
+	background: url('../images/hero-bg-2.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
 }
 
 .hero.hero-bg-image.hero-slider-layout .hero-slide.slide-3{
-	background: url('../images/banner.jpg');
+	background: url('../images/hero-bg-3.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -1581,7 +1581,7 @@ header.main-header .header-sticky.active{
 /************************************/
 
 .why-choose-us{
-	padding: 100px 0 0;
+	padding: 100px 0 100px 0;
 }
 
 .why-choose-item{
@@ -2393,12 +2393,15 @@ header.main-header .header-sticky.active{
 .testimonial-images{
 	position: relative;
 	padding: 15px 245px 160px 25px;
+	margin-top: 70px;
 }
 
 .testimonial-img-1{
 	transform: rotate(-6.46deg);
 	border-radius: 30px;
 	overflow: hidden;
+	border: 5px solid var(--white-color);
+	border-radius: 30px;
 }
 
 .testimonial-img-2{
@@ -2542,7 +2545,7 @@ header.main-header .header-sticky.active{
 /************************************/
 
 .main-footer{
-	padding: 80px 0 0 0;
+	padding: 80px 0 80px 0;
 	margin-bottom: 50px;
 }
 
