@@ -47,7 +47,7 @@
         </div>
     </div>
     <!-- Preloader End -->
-     
+
     <!-- Header Start -->
     <header class="main-header bg-section">
         <div class="header-sticky">
@@ -447,7 +447,8 @@
                                 </div>
                                 <div class="what-we-do-list-content">
                                     <h3>Đào tạo chuyên sâu</h3>
-                                    <p>Cung cấp khóa học ngoại ngữ, kỹ năng chuyên môn giúp bạn sẵn sàng trước khi xuất cảnh.
+                                    <p>Cung cấp khóa học ngoại ngữ, kỹ năng chuyên môn giúp bạn sẵn sàng trước khi xuất
+                                        cảnh.
                                     </p>
                                 </div>
                             </div>
@@ -460,7 +461,8 @@
                                 </div>
                                 <div class="what-we-do-list-content">
                                     <h3>Hỗ trợ tận tâm</h3>
-                                    <p>Hướng dẫn làm hồ sơ, visa, bảo hiểm và hỗ trợ trong suốt quá trình làm việc tại nước ngoài.
+                                    <p>Hướng dẫn làm hồ sơ, visa, bảo hiểm và hỗ trợ trong suốt quá trình làm việc tại
+                                        nước ngoài.
                                     </p>
                                 </div>
                             </div>
@@ -760,6 +762,36 @@
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
+    <!-- ChatBot -->
+    <script>
+        (function () {
+            if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+                window.chatbase = (...args) => {
+                    if (!window.chatbase.q) { window.chatbase.q = [] }
+                    window.chatbase.q.push(args)
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if (prop === "q") return target.q;
+                        return (...args) => target(prop, ...args);
+                    }
+                });
+            }
+            const onLoad = function () {
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "6idRnWbxyHHYVikqSQi9X";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            };
+            if (document.readyState === "complete") {
+                onLoad();
+            } else {
+                window.addEventListener("load", onLoad);
+            }
+        })();
+    </script>
+    
 </body>
 
 </html>

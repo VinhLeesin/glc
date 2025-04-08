@@ -1389,7 +1389,7 @@ header.main-header .header-sticky.active{
 .service-item{
 	position: relative;
 	background-color: var(--white-color);
-	border: 1px solid var(--divider-color);
+	border: 1px solid var(--accent-color);
 	border-radius: 20px;
 	height: calc(100% - 30px);
 	margin-bottom: 30px;

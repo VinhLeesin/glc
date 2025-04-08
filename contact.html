@@ -35,6 +35,12 @@
     <link rel="stylesheet" href="css/mousecursor.css">
     <!-- Main Custom Css -->
     <link href="css/custom.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("gh0Pqn8iVEy-J3izn");
+        })();
+    </script>
 </head>
 
 <body>
@@ -148,7 +154,7 @@
                 <div class="col-lg-6">
                     <!-- Contact Form Start -->
                     <div class="contact-form wow fadeInUp" data-wow-delay="0.2s">
-                        <form id="contactForm" action="#" method="POST" data-toggle="validator">
+                        <form id="contactForm" data-toggle="validator">
                             <div class="row">
                                 <div class="form-group col-md-6 mb-4">
                                     <input type="text" name="fname" class="form-control" id="fname" placeholder="Họ"
@@ -309,7 +315,8 @@
                             <!-- Footer Content Link Start -->
                             <div class="footer-contact-list">
                                 <ul>
-                                    <li><a href="tel:2561234568">Ngõ 2, Hàm Nghi, P. Mỹ Đình 2, Nam Từ Liêm, Hà Nội</a></li>
+                                    <li><a href="tel:2561234568">Ngõ 2, Hàm Nghi, P. Mỹ Đình 2, Nam Từ Liêm, Hà Nội</a>
+                                    </li>
                                     <li><a href="tel:2561234568">092.2570.899</a></li>
                                     <li><a href="mailto:congtylc.glc@gmail.com">congtylc.glc@gmail.com</a></li>
                                 </ul>
@@ -406,6 +413,59 @@
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
+    <!-- MailJs -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const templateParams = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                message: document.getElementById("message").value
+            };
+
+            emailjs.send("default_service", "test123456", templateParams)
+                .then(function (response) {
+                    alert("Tin nhắn đã được gửi thành công!");
+                    document.getElementById("contactForm").reset();
+                }, function (error) {
+                    alert("Có lỗi xảy ra khi gửi tin nhắn. Vui lòng thử lại sau.");
+                    console.log(error);
+                });
+        });
+    </script>
+    <!-- ChatBot -->
+    <script>
+        (function () {
+            if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+                window.chatbase = (...args) => {
+                    if (!window.chatbase.q) { window.chatbase.q = [] }
+                    window.chatbase.q.push(args)
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if (prop === "q") return target.q;
+                        return (...args) => target(prop, ...args);
+                    }
+                });
+            }
+            const onLoad = function () {
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "6idRnWbxyHHYVikqSQi9X";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            };
+            if (document.readyState === "complete") {
+                onLoad();
+            } else {
+                window.addEventListener("load", onLoad);
+            }
+        })();
+    </script>
+
 </body>
 
 </html>

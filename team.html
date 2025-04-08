@@ -2,38 +2,41 @@
 <html lang="zxx">
 
 <head>
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="Awaiken">
-	<!-- Page Title -->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Awaiken">
+    <!-- Page Title -->
     <title>Công Ty TNHH GLC</title>
-	<!-- Favicon Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="images/loader.png">
-	<!-- Google Fonts Css-->
-	<link rel="preconnect" href="https://fonts.googleapis.com/">
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/loader.png">
+    <!-- Google Fonts Css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Epilogue:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
-	<!-- Bootstrap Css -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<!-- SlickNav Css -->
-	<link href="css/slicknav.min.css" rel="stylesheet">
-	<!-- Swiper Css -->
-	<link rel="stylesheet" href="css/swiper-bundle.min.css">
-	<!-- Font Awesome Icon Css-->
-	<link href="css/all.min.css" rel="stylesheet" media="screen">
-	<!-- Animated Css -->
-	<link href="css/animate.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Epilogue:ital,wght@0,100..900;1,100..900&amp;display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- SlickNav Css -->
+    <link href="css/slicknav.min.css" rel="stylesheet">
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- Font Awesome Icon Css-->
+    <link href="css/all.min.css" rel="stylesheet" media="screen">
+    <!-- Animated Css -->
+    <link href="css/animate.css" rel="stylesheet">
     <!-- Magnific Popup Core Css File -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<!-- Mouse Cursor Css File -->
-	<link rel="stylesheet" href="css/mousecursor.css">
-	<!-- Main Custom Css -->
-	<link href="css/custom.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Mouse Cursor Css File -->
+    <link rel="stylesheet" href="css/mousecursor.css">
+    <!-- Main Custom Css -->
+    <link href="css/custom.css" rel="stylesheet" media="screen">
 </head>
+
 <body>
 
     <!-- Preloader Start -->
@@ -146,7 +149,7 @@
                     </div>
                     <!-- Team Item End -->
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <!-- Team Item Start -->
                     <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
@@ -171,7 +174,7 @@
                     </div>
                     <!-- Team Item End -->
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <!-- Team Item Start -->
                     <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
@@ -196,7 +199,7 @@
                     </div>
                     <!-- Team Item End -->
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <!-- Team Item Start -->
                     <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
@@ -246,7 +249,7 @@
                     </div>
                     <!-- Team Item End -->
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <!-- Team Item Start -->
                     <div class="team-item wow fadeInUp" data-wow-delay="1s">
@@ -271,7 +274,7 @@
                     </div>
                     <!-- Team Item End -->
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <!-- Team Item Start -->
                     <div class="team-item wow fadeInUp" data-wow-delay="1.2s">
@@ -296,7 +299,7 @@
                     </div>
                     <!-- Team Item End -->
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <!-- Team Item Start -->
                     <div class="team-item wow fadeInUp" data-wow-delay="1.4s">
@@ -443,6 +446,35 @@
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
+    <!-- ChatBot -->
+    <script>
+        (function () {
+            if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+                window.chatbase = (...args) => {
+                    if (!window.chatbase.q) { window.chatbase.q = [] }
+                    window.chatbase.q.push(args)
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if (prop === "q") return target.q;
+                        return (...args) => target(prop, ...args);
+                    }
+                });
+            }
+            const onLoad = function () {
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "6idRnWbxyHHYVikqSQi9X";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            };
+            if (document.readyState === "complete") {
+                onLoad();
+            } else {
+                window.addEventListener("load", onLoad);
+            }
+        })();
+    </script>
 </body>
 
 </html>

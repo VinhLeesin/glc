@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-<!-- Mirrored from html.awaikenthemes.com/healix/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Mar 2025 04:18:36 GMT -->
-
 <head>
     <!-- Meta -->
     <meta charset="utf-8">
@@ -209,7 +207,8 @@
                         <div class="post-item-body">
                             <!-- Post Item Content Start -->
                             <div class="post-item-content">
-                                <h3><a href="blog-single.html">Những ngành nghề có nhu cầu lao động cao tại Đài Loan</a></h3>
+                                <h3><a href="blog-single.html">Những ngành nghề có nhu cầu lao động cao tại Đài Loan</a>
+                                </h3>
                             </div>
                             <!-- Post Item Content End -->
 
@@ -455,8 +454,35 @@
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
+    <!-- ChatBot -->
+    <script>
+        (function () {
+            if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+                window.chatbase = (...args) => {
+                    if (!window.chatbase.q) { window.chatbase.q = [] }
+                    window.chatbase.q.push(args)
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if (prop === "q") return target.q;
+                        return (...args) => target(prop, ...args);
+                    }
+                });
+            }
+            const onLoad = function () {
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "6idRnWbxyHHYVikqSQi9X";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            };
+            if (document.readyState === "complete") {
+                onLoad();
+            } else {
+                window.addEventListener("load", onLoad);
+            }
+        })();
+    </script>
 </body>
-
-<!-- Mirrored from html.awaikenthemes.com/healix/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Mar 2025 04:18:36 GMT -->
 
 </html>
